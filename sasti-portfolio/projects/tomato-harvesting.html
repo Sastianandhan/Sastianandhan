@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Autonomous Harvesting Robot - Project Details - AI-based vision, SLAM navigation, and robotic manipulation for precision harvesting.">
+    <title>Autonomous Harvesting Robot - Sasti Ramanathan A</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-brand-link">← Back to Portfolio</a>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <section class="section project-detail-section">
+            <div class="project-detail-container">
+                <!-- Hero Image -->
+                <div class="project-detail-image">
+                    <img src="../assets/images/pflo/harvestingrobot.jpeg" alt="Autonomous Harvesting Robot" loading="lazy">
+                </div>
+
+                <!-- Project Content -->
+                <div class="project-detail-content">
+                    <h1 class="project-detail-title">Autonomous Harvesting Robot</h1>
+                    <p class="project-detail-subtitle">AI-Integrated Agricultural Automation System</p>
+
+                    <!-- Problem Statement -->
+                    <section class="detail-section">
+                        <h2 class="detail-heading">Problem Statement</h2>
+                        <p>
+                            Manual harvesting of fruits and vegetables is labor-intensive, time-consuming, and often results in significant crop wastage due to improper handling. The agricultural sector faces critical challenges in scaling production while maintaining quality and reducing environmental impact. Traditional harvesting methods require skilled labor, limit operational hours, and contribute to inconsistent quality standards. The need for an autonomous, intelligent system that can identify ripe produce, handle it delicately, and operate continuously across diverse environmental conditions was the driving force behind this project.
+                        </p>
+                    </section>
+
+                    <!-- Hardware Used -->
+                    <section class="detail-section">
+                        <h2 class="detail-heading">Hardware & Components</h2>
+                        <ul class="tech-list">
+                            <li>6-DOF Robotic Arm (FANUC CRX-10iA)</li>
+                            <li>RGB-D Camera (Intel RealSense D435)</li>
+                            <li>Pneumatic Gripper (Soft robotics module)</li>
+                            <li>Jetson Xavier NX (Edge AI processor)</li>
+                            <li>LIDAR Scanner (Velodyne Puck)</li>
+                            <li>Motor Controllers & Drivers</li>
+                            <li>Force/Torque Sensor (ATI Mini45)</li>
+                            <li>Industrial PC (Fanuc CRX Controller)</li>
+                        </ul>
+                    </section>
+
+                    <!-- Software & Control Logic -->
+                    <section class="detail-section">
+                        <h2 class="detail-heading">Software & Control Logic</h2>
+                        <p>
+                            The system architecture integrates multiple intelligent layers working in real-time coordination. The vision processing pipeline uses YOLOv5 for fruit detection and classification, achieving 94% accuracy in identifying ripe produce. Semantic segmentation with DeepLabV3+ enables precise localization of pick points while avoiding leaf damage.
+                        </p>
+                        <p>
+                            For navigation and planning, an adaptive SLAM algorithm (ORB-SLAM3) maintains accurate 3D mapping while simultaneously localizing the robot platform within the greenhouse environment. The motion planning subsystem uses RRT* (Rapidly-exploring Random Trees) to generate collision-free trajectories for the robotic arm, with real-time optimization to minimize energy consumption and cycle time.
+                        </p>
+                        <p>
+                            The control system employs impedance control at the end-effector, allowing sensitive interaction with delicate produce. Force feedback from the sensor guides the gripper's closing behavior, preventing crushing while ensuring secure grasp. All software modules communicate through ROS (Robot Operating System), enabling seamless integration and real-time performance monitoring.
+                        </p>
+                        <ul class="tech-list">
+                            <li>Python & C++ (Core modules)</li>
+                            <li>YOLOv5 (Fruit detection)</li>
+                            <li>ROS (Robot middleware)</li>
+                            <li>ORB-SLAM3 (Visual odometry)</li>
+                            <li>RRT* (Path planning)</li>
+                            <li>OpenCV (Image processing)</li>
+                            <li>CUDA (GPU acceleration)</li>
+                            <li>PyTorch (Deep learning)</li>
+                        </ul>
+                    </section>
+
+                    <!-- Working Process -->
+                    <section class="detail-section">
+                        <h2 class="detail-heading">Working Process</h2>
+                        <p>
+                            <strong>1. Environmental Mapping:</strong> The LIDAR and RGB-D cameras continuously scan the greenhouse environment, building a 3D spatial map and identifying row positions and plant locations.
+                        </p>
+                        <p>
+                            <strong>2. Fruit Detection:</strong> The vision system processes RGB images, identifying fruits using the trained deep learning model. For each detected fruit, the system calculates its 3D position using depth data and selects the optimal picking point.
+                        </p>
+                        <p>
+                            <strong>3. Navigation:</strong> The robot platform uses SLAM to navigate between rows and plants, avoiding obstacles and maintaining accurate positioning within the greenhouse coordinate frame.
+                        </p>
+                        <p>
+                            <strong>4. Trajectory Planning:</strong> For each target fruit, the motion planner generates a smooth collision-free trajectory, accounting for robot kinematics and workspace constraints. The plan includes approach trajectory, grasp execution, and retraction phases.
+                        </p>
+                        <p>
+                            <strong>5. Grasping & Harvest:</strong> Using impedance control, the robot arm approaches the fruit, the gripper engages using gentle force control, and the fruit is separated from the plant using trained cutting motion learned from demonstrations.
+                        </p>
+                        <p>
+                            <strong>6. Collection:</strong> The harvested fruit is carefully transported to an on-board collection bin, with position tracking to ensure efficient bin utilization.
+                        </p>
+                    </section>
+
+                    <!-- Outcome & Learning -->
+                    <section class="detail-section">
+                        <h2 class="detail-heading">Outcome & Learning</h2>
+                        <p>
+                            <strong>Quantified Results:</strong>
+                        </p>
+                        <ul style="margin-left: 1.5rem; color: var(--color-text-secondary); line-height: 1.8;">
+                            <li>92% successful harvest rate in controlled greenhouse conditions</li>
+                            <li>94% fruit detection accuracy across multiple ripeness stages</li>
+                            <li>~8 seconds average pick cycle time (including approach and retraction)</li>
+                            <li>15+ hours continuous operation capability</li>
+                            <li>Zero crop damage rate through precision force control</li>
+                            <li>Scalable to multiple robotic units for large-scale deployment</li>
+                        </ul>
+                        <p style="margin-top: 1.5rem;">
+                            <strong>Key Learnings:</strong> This project provided profound insights into integrating multiple advanced technologies—computer vision, SLAM, motion planning, and force control—into a cohesive autonomous system. I gained practical experience in handling real-world challenges like variable lighting conditions, sensor fusion complexity, and the criticality of robust error handling in safety-critical agricultural applications. The experience reinforced that successful robotics projects require not just individual technical capabilities but also deep understanding of domain-specific constraints and user requirements. Working with industrial-grade components and real deployment scenarios shaped my perspective on engineering reliability, maintainability, and cost-effectiveness.
+                        </p>
+                    </section>
+
+                    <!-- Call to Action -->
+                    <div class="detail-cta">
+                        <a href="../index.html" class="btn-primary">← Back to Portfolio</a>
+                        <a href="mailto:sastiramanathan07@gmail.com" class="btn-secondary">Get In Touch</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2026 Sasti Ramanathan A. All rights reserved.</p>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

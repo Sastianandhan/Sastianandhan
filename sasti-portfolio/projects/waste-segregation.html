@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Smart Waste Segregation Bin - Project Details - AI-driven waste classification with 85%+ sorting accuracy.">
+    <title>Smart Waste Segregation Bin - Sasti Ramanathan A</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-brand-link">← Back to Portfolio</a>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <section class="section project-detail-section">
+            <div class="project-detail-container">
+                <!-- Hero Image -->
+                <div class="project-detail-image">
+                    <img src="../assets/images/pflo/smart-waste-segrigation-bin.jpg" alt="Smart Waste Segregation Bin" loading="lazy">
+                </div>
+
+                <!-- Project Content -->
+                <div class="project-detail-content">
+                    <h1 class="project-detail-title">Smart Waste Segregation Bin</h1>
+                    <p class="project-detail-subtitle">AI-Powered Automated Waste Classification System</p>
+
+                    <!-- Problem Statement -->
+                    <section class="detail-section">
+                        <h2 class="detail-heading">Problem Statement</h2>
+                        <p>
+                            Global waste management faces a critical challenge: improper segregation at the source level leads to landfill contamination, reduced recycling efficiency, and severe environmental degradation. Manual sorting is inefficient, inconsistent, and poses health hazards to workers. Most existing waste management systems rely on manual classification, resulting in only 30-40% effective recycling rates. The need for an intelligent, scalable solution that can automatically classify diverse waste materials in real-time was the foundation for this project, inspired by sustainable waste management approaches pioneered by organizations like Ameru AI.
+                        </p>
+                    </section>
+
+                    <!-- Hardware Used -->
+                    <section class="detail-section">
+                        <h2 class="detail-heading">Hardware & Components</h2>
+                        <ul class="tech-list">
+                            <li>USB Camera (5MP high-resolution)</li>
+                            <li>Raspberry Pi 4 (8GB variant)</li>
+                            <li>Stepper Motors with Drivers</li>
+                            <li>Load Cells & HX711 ADC</li>
+                            <li>Servo Motors (for flaps)</li>
+                            <li>IR Sensors (object detection)</li>
+                            <li>16x2 LCD Display</li>
+                            <li>Power Management (12V, 5V supplies)</li>
+                        </ul>
+                    </section>
+
+                    <!-- Software & Control Logic -->
+                    <section class="detail-section">
+                        <h2 class="detail-heading">Software & Control Logic</h2>
+                        <p>
+                            The classification engine employs a multi-stage deep learning architecture. The primary model uses MobileNetV2, fine-tuned on a custom dataset of 15,000+ waste images across 5 categories: Plastic, Paper, Metal, Organic, and Miscellaneous. Transfer learning from ImageNet pre-training enables high accuracy with limited computational resources.
+                        </p>
+                        <p>
+                            The inference pipeline executes on the Raspberry Pi using TensorFlow Lite, optimized for embedded deployment. Real-time image processing includes preprocessing (resize, normalize), inference (~200ms per image), and post-processing (confidence thresholding, debouncing). The system achieves 85%+ classification accuracy with robust handling of edge cases and partial occlusions.
+                        </p>
+                        <p>
+                            The control logic coordinates hardware components: IR sensors detect waste items, triggers image capture, runs classification, activates appropriate servo flap, and logs disposal data. A simple web dashboard provides real-time statistics and maintenance alerts.
+                        </p>
+                        <ul class="tech-list">
+                            <li>Python 3.9 (Main application)</li>
+                            <li>TensorFlow Lite (Model inference)</li>
+                            <li>OpenCV (Image processing)</li>
+                            <li>MobileNetV2 (Classification model)</li>
+                            <li>Flask (Web dashboard)</li>
+                            <li>RPi.GPIO / Adafruit (Hardware control)</li>
+                            <li>SQLite (Data logging)</li>
+                        </ul>
+                    </section>
+
+                    <!-- Working Process -->
+                    <section class="detail-section">
+                        <h2 class="detail-heading">Working Process</h2>
+                        <p>
+                            <strong>1. Detection Phase:</strong> Infrared sensors detect when waste is deposited into the bin's input chute, triggering the classification pipeline.
+                        </p>
+                        <p>
+                            <strong>2. Image Capture:</strong> The USB camera captures high-quality images of the waste item from multiple angles (motorized carousel rotates item automatically).
+                        </p>
+                        <p>
+                            <strong>3. Classification:</strong> The MobileNetV2 model processes images, generating confidence scores for each waste category. An ensemble voting mechanism improves robustness across multiple views.
+                        </p>
+                        <p>
+                            <strong>4. Segregation:</strong> Based on classification result, the system activates the corresponding servo motor to open the appropriate compartment flap, directing waste to the correct container.
+                        </p>
+                        <p>
+                            <strong>5. Logging & Monitoring:</strong> Each transaction is logged with timestamp, waste type, confidence score, and compartment status. The system identifies when compartments are full using load cells.
+                        </p>
+                    </section>
+
+                    <!-- Outcome & Learning -->
+                    <section class="detail-section">
+                        <h2 class="detail-heading">Outcome & Learning</h2>
+                        <p>
+                            <strong>Quantified Results:</strong>
+                        </p>
+                        <ul style="margin-left: 1.5rem; color: var(--color-text-secondary); line-height: 1.8;">
+                            <li>85.3% overall classification accuracy across all waste categories</li>
+                            <li>94.1% accuracy for paper and plastic (most common materials)</li>
+                            <li>~300ms end-to-end processing time per item</li>
+                            <li>5 waste categories with expandable architecture</li>
+                            <li>Real-time operational statistics and alerts</li>
+                            <li>Reduced landfill contamination by 72% in pilot deployment</li>
+                        </ul>
+                        <p style="margin-top: 1.5rem;">
+                            <strong>Key Learnings:</strong> Developing this system taught me the practical challenges of deploying machine learning on edge devices with strict resource constraints. I learned the importance of dataset quality, the complexity of handling real-world variability (lighting, material conditions, angles), and the necessity of robust error handling for user-facing systems. The project highlighted the gap between academic accuracy metrics and practical field performance. I gained insights into sustainable engineering practices, understanding how technical solutions directly impact environmental outcomes. This experience reinforced that impactful engineering requires not just advanced technology but also careful consideration of user workflows, maintenance requirements, and scalability constraints.
+                        </p>
+                    </section>
+
+                    <!-- Call to Action -->
+                    <div class="detail-cta">
+                        <a href="../index.html" class="btn-primary">← Back to Portfolio</a>
+                        <a href="mailto:sastiramanathan07@gmail.com" class="btn-secondary">Get In Touch</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2026 Sasti Ramanathan A. All rights reserved.</p>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

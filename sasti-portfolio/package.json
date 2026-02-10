@@ -1,0 +1,28 @@
+{
+  "name": "sasti-portfolio",
+  "version": "1.0.0",
+  "description": "Professional Engineering Portfolio - Sasti Ramanathan A | Mechatronics Engineer specializing in Robotics, Automation, and AI-integrated systems",
+  "main": "index.html",
+  "keywords": [
+    "portfolio",
+    "mechatronics",
+    "robotics",
+    "automation",
+    "engineering",
+    "ai",
+    "iot"
+  ],
+  "author": "Sasti Ramanathan A",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sasti07/sasti-portfolio.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sasti07/sasti-portfolio/issues"
+  },
+  "homepage": "https://sastiramanathan.netlify.app",
+  "scripts": {
+    "start": "python -m http.server 8000"
+  }
+}

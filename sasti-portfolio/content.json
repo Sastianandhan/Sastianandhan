@@ -1,0 +1,77 @@
+{
+  "hero": {
+    "name": "SASTI RAMANATHAN A",
+    "subtitle": "Mechatronics Engineer · Robotics · IoT · Automation"
+  },
+  "about": {
+    "name": "Sasti Ramanathan A",
+    "degree": "B.E. Mechatronics Engineering (2023–2027)",
+    "college": "Kamaraj College of Engineering and Technology",
+    "location": "Madurai, Tamil Nadu"
+  },
+  "skills": [
+    "Robotics",
+    "IoT (Hardware + Software Integration)",
+    "PLC (Mitsubishi)",
+    "Sensors and Actuators",
+    "CAD Design",
+    "Blender (Technical Design & Animation)",
+    "Automation Systems"
+  ],
+  "projects": [
+    {
+      "name": "Tomato Harvesting Robot (THR)",
+      "description": "End-to-end mechanical, sensing, and control system with cost-focused design. Integrates actuators, sensors, and autonomous guidance for efficient harvest operations."
+    },
+    {
+      "name": "Smart Bin",
+      "description": "Camera-based automated waste segregation system utilizing computer vision and deep learning for real-time material classification and sorting automation."
+    },
+    {
+      "name": "Plastic Sand Brick",
+      "description": "Cement-less interlocking bricks manufactured using LDPE waste and sand. Sustainable alternative building material with reduced environmental impact."
+    }
+  ],
+  "experience": [
+    {
+      "company": "Axis Global Automation",
+      "description": "Six-axis robot operation and programming. Developed control sequences, troubleshot integration issues, and optimized manufacturing workflows."
+    },
+    {
+      "company": "VSR Private Limited",
+      "description": "Fabrication workflow and quality inspection. Managed precision tolerances, performed structural validation, and ensured compliance with technical specifications."
+    }
+  ],
+  "conference": {
+    "title": "Effect of Alkali Treatment and Silver Nitrate on Physico-Chemical, Tensile and Morphological Properties of Similax Zeylanica Plant Fibers",
+    "conference": "International Conference on Sustainable Bio-Materials 2025 (ICSEBM 2025)",
+    "venue": "Indian Institute of Technology Madras (IIT Madras)",
+    "date": "03-02-2024"
+  },
+  "certifications": [
+    {
+      "name": "SMC Pneumatics",
+      "issuer": "SMC Corporation",
+      "year": "2025"
+    },
+    {
+      "name": "Internet of Things",
+      "issuer": "Quantanics",
+      "year": "2024"
+    },
+    {
+      "name": "Prompt Engineering",
+      "issuer": "Alison",
+      "year": "2025"
+    },
+    {
+      "name": "PLC Programming",
+      "issuer": "Indwell Automation",
+      "year": "2025"
+    }
+  ],
+  "contact": {
+    "email": "sastiramanathan07@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/sasti07"
+  }
+}
